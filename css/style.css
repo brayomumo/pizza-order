@@ -3,10 +3,24 @@ body{
     background-size: 100%;
     color: antiquewhite;
 }
-.back-colour{
+.col-4{
     background-color:#130101;
     opacity: 0.5;
     color: white;
-    padding: 40px;
+    padding: 0;
     margin: 5%
+}
+
+
+/* inside the columns */
+.imgs{
+    float: left;
+}
+.imgs img{
+    width: 100%;
+}
+.text{
+    float: right;
+    font-size: 10px;
+
 }
