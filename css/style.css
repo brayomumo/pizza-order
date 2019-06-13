@@ -1,0 +1,12 @@
+body{
+    background-image: url("../images/webpage-background.jpg");
+    background-size: 100%;
+    color: antiquewhite;
+}
+.back-colour{
+    background-color:#130101;
+    opacity: 0.5;
+    color: white;
+    padding: 40px;
+    margin: 5%
+}
