@@ -5,11 +5,49 @@ body{
 }
 .col-4{
     background-color:#130101;
-    opacity: 0.5;
+    opacity: 0.6;
     color: white;
     padding: 0;
     margin: 5%
 }
+
+/* top  */
+
+.top {
+    background-color: dimgray;
+    /* opacity: 0.4; */
+}
+.logo{
+    float: left;
+    width: 20%;
+    height: 5%;
+}
+.logo img{
+    width: 30%;
+}
+.xyz{
+    float: right;
+    font-size: 20px;
+}
+/* nav bar */
+
+.navigation{
+    text-align: center;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    float: left;
+    
+  }
+  li a {
+    display: block;
+    width: 60px;
+    color: black;
+  }
 
 
 /* inside the columns */
@@ -24,3 +62,45 @@ body{
     font-size: 10px;
 
 }
+
+
+  /*Toppings dropdown */
+
+
+
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+  }
+  
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {background-color: #ddd;}
+  
+  .dropdown:hover .dropdown-content {display: block;}
+  
