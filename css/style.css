@@ -89,7 +89,7 @@ body{
     float: left;
     padding: 15px;
 }
-.imgs img{
+.container img{
     width: 100%;
 }
 .text{
@@ -99,7 +99,7 @@ body{
 }
 
 /* order divsion */
-.customer-order{
+.customer-order-row{
     background-color: beige;
     color: #130101;
 }
@@ -252,4 +252,3 @@ select{
     margin: 40px auto 80px auto;
     font-size: 1.75em;
 }
-  
