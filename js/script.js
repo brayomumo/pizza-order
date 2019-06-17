@@ -1,35 +1,24 @@
-// To run the function ready() when the document loads completely
+// business logic
 
-if (document.readyState == 'loading') {
-    document.addEventListener('DOMContentLoaded', ready)
-} else {
-    ready()
+function topping(topp) {
+    this.topp = topp,
+        this.majina = ['bacon', 'chicken', 'beef', 'vegetables'],
+        this.price = 0
+    if (topp == majina[0]) {
+        this.price += 100;
+    } else if (topp == majina[1]) {
+        this.price += 150;
+    } else if (topp == majina[2]) {
+        this.price += 200
+    } else if (topp == majina[3]) {
+        this.price += 250
+    } else if (topp == majina[4]) {
+        this.price += 300
+    } else if (topp == majina[5]) {
+        this.price += 400
+    }
+    return this.price;
 }
-
-function ready() {
-
-    // Remove items from the cart
-    var removeCartItemButtons = document.getElementsByClassName('btn-danger')
-    for (var i = 0; i < removeCartItemButtons.length; i++) {
-        var button = removeCartItemButtons[i]
-        button.addEventListener('click', removeCartItem)
-    }
-
-    var quantityInputs = document.getElementsByClassName('cart-quantity-input')
-    for (var i = 0; i < quantityInputs.length; i++) {
-        var input = quantityInputs[i]
-        input.addEventListener('change', quantityChanged)
-    }
-
-    var ORDERButtons = document.getElementsByClassName('pizza-button')
-    for (var i = 0; i < ORDERButtons.length; i++) {
-        var button = ORDERButtons[i]
-        button.addEventListener('click', ORDERClicked)
-    }
-
-    document.getElementsByClassName('btn-purchase')[0].addEventListener('click', purchaseClicked)
-}
-
 function purchaseClicked() {
     alert('Thank you for your purchase')
     var cartItems = document.getElementsByClassName('cart-items')[0]
@@ -84,6 +73,7 @@ function addItemToCart(title, price, imageSrc) {
     
     </div>
     <span class="cart-price cart-column">${price}</span>
+    <p id="pizza-topping"></p>
     <div class="cart-quantity cart-column">
     <input class="cart-quantity-input" type="number" value="1">
     <button class="btn btn-danger" type="button">REMOVE</button>
@@ -104,8 +94,43 @@ function updateCartTotal() {
         var quantityElement = cartRow.getElementsByClassName('cart-quantity-input')[0]
         var price = parseFloat(priceElement.innerText.replace('$', ''))
         var quantity = quantityElement.value
-        total = total + (price * quantity)
+        total = total + (price * quantity)+ topping.price
     }
     total = Math.round(total * 100) / 100
+    
     document.getElementsByClassName('cart-total-price')[0].innerText = '$' + total
 }
+
+// user Interface
+$(document).ready(function() {
+
+    var matopping = document.getElementsByClassName('topping').value
+    console.log(matopping)
+
+    // function myFunction(){
+    //     var matopping = document.getElementsByClassName("input.topping").value
+        
+    // }
+    
+    // Remove items from the cart
+    var removeCartItemButtons = document.getElementsByClassName('btn-danger')
+    for (var i = 0; i < removeCartItemButtons.length; i++) {
+        var button = removeCartItemButtons[i]
+        button.addEventListener('click', removeCartItem)
+    }
+
+    var quantityInputs = document.getElementsByClassName('cart-quantity-input')
+    for (var i = 0; i < quantityInputs.length; i++) {
+        var input = quantityInputs[i]
+        input.addEventListener('change', quantityChanged)
+    }
+
+    var ORDERButtons = document.getElementsByClassName('pizza-button')
+    for (var i = 0; i < ORDERButtons.length; i++) {
+        var button = ORDERButtons[i]
+        button.addEventListener('click', ORDERClicked)
+    }
+
+    document.getElementsByClassName('btn-purchase')[0].addEventListener('click', purchaseClicked)
+
+})
