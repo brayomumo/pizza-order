@@ -1,3 +1,5 @@
+// To run the function ready() when the document loads completely
+
 if (document.readyState == 'loading') {
     document.addEventListener('DOMContentLoaded', ready)
 } else {
@@ -5,6 +7,8 @@ if (document.readyState == 'loading') {
 }
 
 function ready() {
+
+    // Remove items from the cart
     var removeCartItemButtons = document.getElementsByClassName('btn-danger')
     for (var i = 0; i < removeCartItemButtons.length; i++) {
         var button = removeCartItemButtons[i]
@@ -17,10 +21,10 @@ function ready() {
         input.addEventListener('change', quantityChanged)
     }
 
-    var addToCartButtons = document.getElementsByClassName('shop-item-button')
-    for (var i = 0; i < addToCartButtons.length; i++) {
-        var button = addToCartButtons[i]
-        button.addEventListener('click', addToCartClicked)
+    var ORDERButtons = document.getElementsByClassName('pizza-button')
+    for (var i = 0; i < ORDERButtons.length; i++) {
+        var button = ORDERButtons[i]
+        button.addEventListener('click', ORDERClicked)
     }
 
     document.getElementsByClassName('btn-purchase')[0].addEventListener('click', purchaseClicked)
@@ -49,12 +53,12 @@ function quantityChanged(event) {
     updateCartTotal()
 }
 
-function addToCartClicked(event) {
+function ORDERClicked(event) {
     var button = event.target
     var shopItem = button.parentElement.parentElement
-    var title = shopItem.getElementsByClassName('shop-item-title')[0].innerText
-    var price = shopItem.getElementsByClassName('shop-item-price')[0].innerText
-    var imageSrc = shopItem.getElementsByClassName('shop-item-image')[0].src
+    var title = shopItem.getElementsByClassName('pizza-title')[0].innerText
+    var price = shopItem.getElementsByClassName('pizza-price')[0].innerText
+    var imageSrc = shopItem.getElementsByClassName('pizza-image')[0].src
     addItemToCart(title, price, imageSrc)
     updateCartTotal()
 }
@@ -71,16 +75,19 @@ function addItemToCart(title, price, imageSrc) {
         }
     }
     var cartRowContents = `
-        <div class=" cart-item cart-column">
-        
-            <img class="cart-item-image" src="${imageSrc}" width="50" height="100">
-            <span class="cart-item-title">${title}</span>
-        </div><br><br>
-        <span class="cart-price cart-column">${price}</span>
-        <div class="cart-quantity cart-column">
-            <input class="cart-quantity-input" type="number" value="1">
-            <button class="btn btn-danger" type="button">REMOVE</button>
-        </div>`
+    <div class=" cart-item cart-column">
+
+    <img class="cart-item-image" src="${imageSrc}" width="50" height="100">
+
+    <br><br>
+
+    
+    </div>
+    <span class="cart-price cart-column">${price}</span>
+    <div class="cart-quantity cart-column">
+    <input class="cart-quantity-input" type="number" value="1">
+    <button class="btn btn-danger" type="button">REMOVE</button>
+    </div>`
     cartRow.innerHTML = cartRowContents
     cartItems.append(cartRow)
     cartRow.getElementsByClassName('btn-danger')[0].addEventListener('click', removeCartItem)
