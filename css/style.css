@@ -98,11 +98,7 @@ body{
     
 }
 
-/* order divsion */
-.customer-order-row{
-    background-color: beige;
-    color: #130101;
-}
+
 
 
 /* buttons */
@@ -110,14 +106,16 @@ body{
 .btn-primary{
     float: right;
 }
-select{
-    font-size: 15px;
+.topping{
+    font-size: 20px;
+    color: blue;
     
 }
 
 /* cart */
 .pizza {
     margin: 30px;
+    background-color: #333;
 }
 
 .pizza-title {
@@ -126,7 +124,7 @@ select{
     text-align: center;
     font-weight: bold;
     font-size: 1.5em;
-    color: #333;
+    color:white;
     margin-bottom: 15px;
 }
 
