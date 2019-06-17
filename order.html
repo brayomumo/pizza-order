@@ -65,7 +65,7 @@
                                 <button class="btn btn-primary pizza-button" type="button">ORDER</button>
                             </div>
                             <div class="topping">
-                                <select id="selectTopping">
+                                <select class="selectTopping">
                                     <option value="None" selected="selected">---Topping---</option>
                                     <option value="bacon"> Bacon </option>
                                     <option value="meat"> Meat </option>
@@ -87,7 +87,7 @@
                                 <button class="btn btn-primary pizza-button" type="button">ORDER</button>
                             </div>
                             <div class="topping">
-                                <select id="selectTopping">
+                                <select class="selectTopping">
                                     <option value="None" selected="selected">---Topping---</option>
                                     <option value="bacon"> Bacon </option>
                                     <option value="meat"> Meat </option>
@@ -107,7 +107,7 @@
                                 <button class="btn btn-primary pizza-button" type="button">ORDER</button>
                             </div>
                             <div class="topping">
-                                <select id="selectTopping">
+                                <select class="selectTopping">
                                     <option value="None" selected="selected">---Topping---</option>
                                     <option value="bacon"> Bacon </option>
                                     <option value="meat"> Meat </option>
@@ -232,15 +232,24 @@
                                 <span class="pizza-price">$5500</span>
                                 <button class="btn btn-primary pizza-button" type="button">ORDER</button>
                             </div>
-                            <div class="topping">
-                                <select id="selectTopping">
-                                    <option value="None" selected="selected">--Topping----</optio---n>
-                                    <option value="bacon"> Bacon </option>
-                                    <option value="meat"> Meat </option>
-                                    <option value="chicken"> Chicken </option>
-                                    <option value="vegies"> Vegies </option>
-                                </select>
-                            </div>
+                            <div class="col-md-6">
+                                <div class="ckbox ckbox-primary">
+                                  <input type="checkbox" value="Bacon" class="topping ">
+                                  <label for="checkboxPrimary">Bacon</label>
+                                </div>
+                                <div class="ckbox ckbox-warning">
+                                  <input type="checkbox" class="topping">
+                                  <label for="checkboxWarning">Chicken</label>
+                                </div>
+                                <div class="ckbox ckbox-success">
+                                  <input type="checkbox" class="topping">
+                                  <label for="checkboxSuccess">Beef</label>
+                                </div>
+                                <div class="ckbox ckbox-danger">
+                                  <input type="checkbox" class="topping">
+                                  <label for="checkboxDanger">Vegetables</label>
+                                </div>
+                              </div>
                         </div>
                     </div>
 
